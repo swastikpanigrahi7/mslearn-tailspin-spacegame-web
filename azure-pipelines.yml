@@ -44,8 +44,8 @@ steps:
   inputs:
       SonarCloud: 'Sonarcloud'
       organization: 'padmapeddigari'
-      projectKey: 'mslearn-tailspin'
-      projectName: 'mslearn-tailspin'
+      projectKey: '$(prokectkey)'
+      projectName: '$(prokectkey)'
       projectVersion: $(Build.BuildNumber)
       extraProperties: |
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
