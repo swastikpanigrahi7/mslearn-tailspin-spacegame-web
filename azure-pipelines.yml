@@ -43,7 +43,7 @@ steps:
   displayName: Sonar Analysis
   inputs:
       SonarCloud: 'Sonarcloud'
-      organization: 'padmapeddigari'
+      organization: '$(sonarorgname)'
       projectKey: $(projectkey)
       projectName: $(projectkey)
       projectVersion: $(Build.BuildNumber)
