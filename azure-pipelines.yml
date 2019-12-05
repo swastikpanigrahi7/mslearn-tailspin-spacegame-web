@@ -44,8 +44,8 @@ steps:
   inputs:
       SonarCloud: 'Sonarcloud'
       organization: 'padmapeddigari'
-      projectKey: $(prokectkey)
-      projectName: $(prokectkey)
+      projectKey: $(projectkey)
+      projectName: $(projectkey)
       projectVersion: $(Build.BuildNumber)
       extraProperties: |
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
