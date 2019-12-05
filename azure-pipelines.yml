@@ -72,6 +72,13 @@ steps:
     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
     zipAfterPublish: true
 
+- task: SonarCloudAnalyze@1
+  displayName: SonarAnalyser
+
+- task: SonarCloudPublish@1
+  displayName: Sonarpublish
+  
+
 - task: PublishBuildArtifacts@1
   displayName: Publish artifacts
   condition: succeeded()
