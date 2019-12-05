@@ -45,7 +45,7 @@ steps:
       SonarCloud: 'Sonarcloud'
       organization: $(SonarOrganization)
       projectKey: $(SonarProjectKey)
-      projectName: $(SonarOrganization)
+      projectName: $(SonarProjectName)
       projectVersion: $(Build.BuildNumber)
       extraProperties: |
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
