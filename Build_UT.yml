@@ -95,7 +95,7 @@ steps:
     zipAfterPublish: true
 - task: SonarCloudPublish@1
   displayName: 'Sonar Publish'
-  inputs:
+  
    
        
 - task: PublishBuildArtifacts@1
