@@ -51,10 +51,7 @@ steps:
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
        sonar.exclusions=**/wwwroot/lib/**/*
 
-- task: SonarCloudAnalyze@1
-  displayName: 'sonar analyse'
-  
-  
+
 - task: DotNetCoreCLI@2
   displayName: Build the project
   inputs:
@@ -93,6 +90,9 @@ steps:
     command: publish
     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
     zipAfterPublish: true
+
+- task: SonarCloudAnalyze@1
+  displayName: 'sonar analyse'
 - task: SonarCloudPublish@1
   displayName: 'Sonar Publish'
   
