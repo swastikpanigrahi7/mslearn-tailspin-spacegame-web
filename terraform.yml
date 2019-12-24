@@ -76,6 +76,7 @@ stages:
     variables:
     - group: Release
     steps:
+    
     - script: |
         # Exit when any command returns a failure status.
         set -e
