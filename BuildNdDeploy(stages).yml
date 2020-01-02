@@ -115,7 +115,7 @@ stages:
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
   dependsOn: Build
-  condition: eq(variables.Deploy, true)
+  condition: and(succeeded(),eq(variables.Deploy, true))
   jobs:
   - deployment: Deploy
     pool:
