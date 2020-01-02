@@ -1,7 +1,7 @@
 trigger:
     branches:
      include:
-      - release 
+      - unit-tests 
 
 variables:
   buildConfiguration: 'Release'
