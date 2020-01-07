@@ -8,4 +8,5 @@ steps:
   inputs:
       azureSubscription: 'azureportal'
       ScriptType: InlineScript
+      azurePowerShellVersion: LatestVersion
       Inline: 'New-AzResourceGroupDeployment -Location Central-Us -TemplateFile "$(Build.Repository.LocalPath)\ARMTemplates\StorageAcct\template.json"'
