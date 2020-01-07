@@ -1,7 +1,7 @@
-trigger:
-    branches:
-     include:
-      - unit-tests 
+trigger: none
+#    branches:
+#     include:
+#      - unit-tests 
 
 variables:
   buildConfiguration: 'Release'
