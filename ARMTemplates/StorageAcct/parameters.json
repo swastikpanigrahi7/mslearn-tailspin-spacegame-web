@@ -4,7 +4,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccounts_armtem1_name": {
-            "value": autostoreacct1
+            "value": "autostoreacct1"
         }
     }
 }
