@@ -9,4 +9,4 @@ steps:
       azureSubscription: 'azureportal'
       ScriptType: InlineScript
       azurePowerShellVersion: LatestVersion
-      Inline: 'New-AzResourceGroupDeployment -ResourceGroupName spacewebgamer -TemplateFile "$(Build.Repository.LocalPath)\ARMTemplates\StorageAcct\template.json"'
+      Inline: 'New-AzResourceGroupDeployment -ResourceGroupName spacewebgamer -TemplateFile "$(Build.Repository.LocalPath)\ARMTemplates\StorageAcct\template.json" -TemplateParameterFile "$(Build.Repository.LocalPath)\ARMTemplates\StorageAcct\parameters.json"'
