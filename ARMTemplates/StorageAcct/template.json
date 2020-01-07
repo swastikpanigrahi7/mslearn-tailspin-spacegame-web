@@ -3,7 +3,6 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccounts_name": {
-            "defaultValue": "armtem1",
             "type": "String"
         }
     },
