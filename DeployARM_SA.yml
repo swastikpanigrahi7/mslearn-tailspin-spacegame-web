@@ -1,6 +1,11 @@
-trigger: none
-
 pool:
  vmImage: 'vs2017-win2016'
 
 
+steps:
+- task: AzurePowerShell@4
+  displayName: 'Deploy ARM template'
+  inputs:
+      azureSubscription: 'azureportal'
+      ScriptType: InlineScript
+      Inline: 'New-AzResourceGroupDeployment -Location Central-Us -TemplateFile "$(Build.Repository.LocalPath)\ARMTemplates\StorageAcct\template.json"'
