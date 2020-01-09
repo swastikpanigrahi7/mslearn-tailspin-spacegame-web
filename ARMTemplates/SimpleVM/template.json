@@ -3,7 +3,6 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "virtualMachines_vm1_name": {
-            "defaultValue": "vm1",
             "type": "String"
         },
         "disks_vm1_OsDisk_1_81a3e8830cee43afb234f0fe7945c263_externalid": {
