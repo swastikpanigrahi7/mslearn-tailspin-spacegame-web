@@ -1,0 +1,78 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_vm1_name": {
+            "defaultValue": "vm1",
+            "type": "String"
+        },
+        "disks_vm1_OsDisk_1_81a3e8830cee43afb234f0fe7945c263_externalid": {
+            "defaultValue": "/subscriptions/22771c57-463e-4629-bd01-b9a931b706e1/resourceGroups/spacewebgamer/providers/Microsoft.Compute/disks/vm1_OsDisk_1_81a3e8830cee43afb234f0fe7945c263",
+            "type": "String"
+        },
+        "networkInterfaces_vm1998_externalid": {
+            "defaultValue": "/subscriptions/22771c57-463e-4629-bd01-b9a931b706e1/resourceGroups/spacewebgamer/providers/Microsoft.Network/networkInterfaces/vm1998",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-03-01",
+            "name": "[parameters('virtualMachines_vm1_name')]",
+            "location": "centralus",
+            "tags": {
+                "environment": "dev"
+            },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B1ls"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_vm1_name'), '_OsDisk_1_81a3e8830cee43afb234f0fe7945c263')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('disks_vm1_OsDisk_1_81a3e8830cee43afb234f0fe7945c263_externalid')]"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_vm1_name')]",
+                    "adminUsername": "admin123",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_vm1998_externalid')]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "https://spacewebgamerdiag.blob.core.windows.net/"
+                    }
+                }
+            }
+        }
+    ]
+}
