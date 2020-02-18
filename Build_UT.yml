@@ -41,10 +41,10 @@ steps:
 - task: SonarCloudPrepare@1
   displayName: Sonar Analysis
   inputs:
-      SonarCloud: 'Sonarcloud'
-      organization: 'devopsorg48'
-      projectKey: 'spacewebgamer'
-      projectName: 'spacewebgamer'
+      SonarCloud: 'Sonar_Cloud_Display'
+      organization: 'skumarpanigrahi'
+      projectKey: 'Swastik_Repo'
+      projectName: 'Swastik_Repo'
       projectVersion: $(Build.BuildNumber)
       extraProperties: |
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
